@@ -1,12 +1,24 @@
 import tkinter
 import sqlite3
-import matplotlib
-import pandas
+#import matplotlib
+#import pandas
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter.messagebox import askyesno
 import tkinter.font as tkfont
+
+
+# ------------- For Honor & Data ------------#
+
+# A tkinter and sqlite3 stat viewer and database manager
+# Divided into tabs, tab 1 constitutes the player profile viewer. Ideally could be 
+# expanded with personal statistics on a per character basis
+# Tab 2 is the records list, showing a record of every time a player was entered into the database.
+# Allows the editing, creation and deletion of new records through demonstrative example tools
+# Deletion has support for deleting multiple selections at once.
+# Both tabs can be filtered by searching, which searches by similar character in the name field.
+
 
 conn = sqlite3.connect('FHred.db')
 cursor = conn.cursor()
@@ -19,10 +31,10 @@ main = Menu(win)
 # Sets up the tab system / tab switching
 tabMenu = ttk.Notebook(win)
 tab1 = ttk.Frame(tabMenu)
-tab2 = ttk.Frame(tabMenu)
+#tab2 = ttk.Frame(tabMenu)
 tab3 = ttk.Frame(tabMenu)
 tabMenu.add(tab1, text='Player List')
-tabMenu.add(tab2, text='Hero Stats')
+#tabMenu.add(tab2, text='Hero Stats')
 tabMenu.add(tab3, text='Data Records')
 tabMenu.pack(side=TOP, anchor=W)
 playerdata = ()
